@@ -61,27 +61,34 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
             switch (i - round) {
                 case 0:
                     layoutDecoratedWithMargins(view, 0, offsetH, 2 * width, offsetH + height);
+					break;
                 case 1:
                     layoutDecoratedWithMargins(view, 2 * width, offsetH,
                             3 * width, offsetH + height / 2);
+					break;
                 case 2:
                     layoutDecoratedWithMargins(view, 2 * width, offsetH + height / 2,
                             3 * width, offsetH + height);
                     offsetH = offsetH + height;
+					break;
                 case 3:
                     layoutDecoratedWithMargins(view, 0, offsetH,
                             width, offsetH + height / 2);
+					break;
                 case 4:
                     layoutDecoratedWithMargins(view, 0, offsetH + height / 2,
                             width, offsetH + height);
+					break;
                 case 5:
                     layoutDecoratedWithMargins(view, width, offsetH,
                             3 * width, offsetH + height);
                     offsetH = offsetH + height;
+					break;
                 default:
                     layoutDecoratedWithMargins(view, 0, offsetH, 3 * width,
                             offsetH + height);
                     offsetH = offsetH + height;
+					break;
             }
             if (i + 1 - round == 6)
                 round += 6;
