@@ -2,7 +2,10 @@ package com.harvey.recyclerviewdemo;
 
 import android.content.res.Resources;
 import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 /**
@@ -12,7 +15,7 @@ import android.view.View;
  *     desc   :
  * </pre>
  */
-public class CustomLayoutManager extends RecyclerView.LayoutManager {
+public class ScatteredLayoutManager extends RecyclerView.LayoutManager {
 
     private int verticalScrollOffset;
     private int offsetH = 0;
@@ -21,6 +24,11 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
     @Override
     public RecyclerView.LayoutParams generateDefaultLayoutParams() {
         return new RecyclerView.LayoutParams(RecyclerView.LayoutParams.WRAP_CONTENT, RecyclerView.LayoutParams.WRAP_CONTENT);
+    }
+
+    @Override
+    public boolean isAutoMeasureEnabled() {
+        return true;
     }
 
     @Override

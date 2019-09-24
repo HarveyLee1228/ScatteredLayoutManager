@@ -1,8 +1,8 @@
 package com.harvey.recyclerviewdemo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rv);
         recyclerView.addItemDecoration(new SpaceItemDecoration(10));
-        recyclerView.setLayoutManager(new CustomLayoutManager());
+        recyclerView.setLayoutManager(new ScatteredLayoutManager());
         List<Item> list = getItems();
         recyclerView.setAdapter(new Adapter(this,list));
     }
