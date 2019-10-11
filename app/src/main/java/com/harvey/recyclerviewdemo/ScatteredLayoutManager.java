@@ -2,11 +2,9 @@ package com.harvey.recyclerviewdemo;
 
 import android.content.res.Resources;
 import android.graphics.Rect;
-
-import androidx.annotation.NonNull;
-import androidx.core.view.ViewCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * <pre>
@@ -62,7 +60,7 @@ public class ScatteredLayoutManager extends RecyclerView.LayoutManager {
             View view = recycler.getViewForPosition(i);
             addView(view); // 因为detach过所以重新添加
             measureChildWithMargins(view, 0, 0);
-            int height = getDecoratedMeasuredHeight(view) + getBottomDecorationHeight(view);
+            int height = getDecoratedMeasuredHeight(view);
 
             Rect mTmpRect = new Rect();
             calculateItemDecorationsForChild(view, mTmpRect);
